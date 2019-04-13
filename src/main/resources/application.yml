@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ms_srm_platformzuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    exp:
+      path: /exp/**
+      serviceId: ms_srm_exp_manage
+    filter:
+      path: /filter/**
+      serviceId: ms_srm_expfilter
+    balszero:
+      path: /balszero/**
+      serviceId: ms_srm_balszero
